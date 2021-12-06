@@ -1,9 +1,8 @@
 [build]
-    base = ""
-    publish = "dist/"
-    command = "npm run build:production"
+publish = "/dist"
+command = "npm run build:production"
 
 [[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin: *
+    for = "/*"
+[headers.values]
+    Access-Control-Allow-Origin = "*"
