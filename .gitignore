@@ -1,0 +1,9 @@
+/.idea
+/node_modules
+/exampleSite/public
+/exampleSite/hugo_stats.json
+.DS_Store
+/chromedriver/
+sp.py
+user_agents.py
+wiki.py

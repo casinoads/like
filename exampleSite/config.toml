@@ -1,0 +1,81 @@
+baseurl = "https://ilike.netlify.app"
+metaDataFormat = "yaml"
+Title = "👍 I-LIKE"
+theme = "blist"
+
+
+DefaultContentLanguage = "en"
+DefaultContentLanguageInSubdir = "false"
+
+[languages]
+  [languages.en]
+    contentDir = "content/" #English
+    weight = 1
+    languageName = "English"
+    title = "👍 I-LIKE"
+    [languages.en.params]
+      introTitle = "I'like this. How about you?"
+      introSubtitle = "That collects the way you like. If anyone likes it, you can come and share it. เก็บรวมแบบที่ชอบ เป็นสิ่งที่พบเห็นแล้วรู้สึกชอบ จึงเก็บมารวมไว้ที่นี่ แล้วคุณล่ะชอบแบบไหน"
+      introPhoto = "/picture.jpg"
+
+    [[languages.en.menu.main]]
+        name = "Warehouse"
+        url = "warehouse"
+        weight = 1
+
+    [[languages.en.menu.main]]
+        name = "About"
+        url = "about"
+        weight = 2
+
+    [[languages.en.menu.main]]
+        name = "Tags"
+        url = "tags"
+        weight = 3
+
+  
+[params]
+  # Enable the darkmode toggle in header
+  darkModeToggle = true
+  
+  # Enable search in header
+  enableSearch = true
+
+  # Custom copyright - optional
+  copyright = "Copyright © 2021 - PNCKDEVAPP · All rights reserved"
+  favicon = "/img/logo-like.png"
+
+  # Color for the intro details and social links block, not applicable for dark mode
+  # Supported values: Any color from TailwindCSS default colors
+  # Reference: https://tailwindcss.com/docs/customizing-colors
+  ascentColor = "bg-blue-100"
+
+[params.homepage.social]
+  # Global params xommon for both languages
+  title = "Follow me"
+  description = "I work on everything coding and tweet developer memes"
+  twitter = "https://twitter.com/"
+  linkedin = "https://linkedin.com/in/"
+  xing = "https://www.xing.com/profile/"
+  github = "https://github.com/"
+  medium = "https://medium.com/"
+  reddit = "https://reddit.com/"
+  dribbble = "https://dribbble.com/"
+
+[[menu.main]]
+  name = "About"
+  url = "/about"
+
+[build]
+  writeStats = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# syntax highlight settings
+[markup]
+  [markup.highlight]
+    style = "dracula"
+  [markup.goldmark.renderer]
+    # Enable to include inline HTML
+    unsafe = true
