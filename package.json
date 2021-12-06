@@ -5,17 +5,30 @@
   "main": "index.js",
   "scripts": {
     "start": "cd exampleSite && hugo serve --themesDir ../..",
-    "dev": "hugo server -s exampleSite --themesDir=../.. --disableFastRender",
-    "build": "cd exampleSite && hugo --themesDir ../.. --gc"
+    "preinstall": "npx npm-force-resolutions",
+    "babel": "npx babel src/js --out-file assets/js/theme.min.js --source-maps",
+    "build": "hugo -v --source=exampleSite --themesDir ../.. --gc",
+    "dev": "hugo server -s exampleSite --themesDir=../.. --disableFastRender"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.5",
+    "babel-cli": "^6.26.0",
     "postcss": "^8.2.10",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.1",
-    "tailwindcss": "^2.1.1"
+    "tailwindcss": "^2.1.1",
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-preset-minify": "^0.5.1",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
+    "core-js": "^3.6.4",
+    "husky": "^4.2.3",
+    "minimist": "^1.2.5",
+    "segmentit": "^2.0.3"
   },
   "browserslist": [
     "last 1 version",
