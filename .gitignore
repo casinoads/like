@@ -1,9 +1,14 @@
-/.idea
-/node_modules
-/exampleSite/public
-/exampleSite/hugo_stats.json
-.DS_Store
-/chromedriver/
-sp.py
-user_agents.py
-wiki.py
+# npm
+dist
+web
+node_modules
+
+# config
+config.json
+
+# ide
+.idea
+.vscode
+
+# log
+yarn-error.log

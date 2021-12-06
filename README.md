@@ -1,146 +1,72 @@
-# Blist theme for Hugo
+<h1 align="center">Jellyfin Web</h1>
+<h3 align="center">Part of the <a href="https://jellyfin.org">Jellyfin Project</a></h3>
 
-![Latest Release](https://img.shields.io/github/tag/apvarun/blist-hugo-theme.svg)
-![Blist hugo theme](https://img.shields.io/github/license/apvarun/blist-hugo-theme)
-![Hugo generator](https://img.shields.io/badge/generator-hugo-brightgreen)
+---
 
-Blist is a clean and fast blog theme for your Hugo site.
+<p align="center">
+<img alt="Logo Banner" src="https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/banner-logo-solid.svg?sanitize=true"/>
+<br/>
+<br/>
+<a href="https://github.com/jellyfin/jellyfin-web">
+<img alt="GPL 2.0 License" src="https://img.shields.io/github/license/jellyfin/jellyfin-web.svg"/>
+</a>
+<a href="https://github.com/jellyfin/jellyfin-web/releases">
+<img alt="Current Release" src="https://img.shields.io/github/release/jellyfin/jellyfin-web.svg"/>
+</a>
+<a href="https://translate.jellyfin.org/projects/jellyfin/jellyfin-web/?utm_source=widget">
+<img src="https://translate.jellyfin.org/widgets/jellyfin/-/jellyfin-web/svg-badge.svg" alt="Translation Status"/>
+</a>
+<br/>
+<a href="https://opencollective.com/jellyfin">
+<img alt="Donate" src="https://img.shields.io/opencollective/all/jellyfin.svg?label=backers"/>
+</a>
+<a href="https://features.jellyfin.org">
+<img alt="Feature Requests" src="https://img.shields.io/badge/fider-vote%20on%20features-success.svg"/>
+</a>
+<a href="https://matrix.to/#/+jellyfin:matrix.org">
+<img alt="Chat on Matrix" src="https://img.shields.io/matrix/jellyfin:matrix.org.svg?logo=matrix"/>
+</a>
+<a href="https://www.reddit.com/r/jellyfin">
+<img alt="Join our Subreddit" src="https://img.shields.io/badge/reddit-r%2Fjellyfin-%23FF5700.svg"/>
+</a>
+</p>
 
-![Blist Icon](https://github.com/apvarun/blist-hugo-theme/raw/main/images/blist-logo.png)
+Jellyfin Web is the frontend used for most of the clients available for end users, such as desktop browsers, Android, and iOS. We welcome all contributions and pull requests! If you have a larger feature in mind please open an issue so we can discuss the implementation before you start. Translations can be improved very easily from our <a href="https://translate.jellyfin.org/projects/jellyfin/jellyfin-web">Weblate</a> instance. Look through the following graphic to see if your native language could use some work!
 
-**Features:**
+<a href="https://translate.jellyfin.org/engage/jellyfin/?utm_source=widget">
+<img src="https://translate.jellyfin.org/widgets/jellyfin/-/jellyfin-web/multi-auto.svg" alt="Detailed Translation Status"/>
+</a>
 
-- Responsive content / Mobile-optimized
-- Blog pagination
-- Text Search
-- Social links
-- Code highlighting
-- Color customization
-- Dark mode
-- Fast performance
-- SEO optimized
-- i18n support
+## Build Process
 
-## Preview
+### Dependencies
 
-![Preview](https://github.com/apvarun/blist-hugo-theme/raw/main/images/screenshot.png)
+- [Node.js](https://nodejs.org/en/download)
+- npm (included in Node.js)
 
-➡️ [DEMO](https://blist.vercel.app/)
+### Getting Started
 
-## Get the theme
+1. Clone or download this repository.
 
-Minimum Hugo Version: **0.82.1**
+   ```sh
+   git clone https://github.com/jellyfin/jellyfin-web.git
+   cd jellyfin-web
+   ```
 
-Run from the root of your Hugo site:
+2. Install build dependencies in the project directory.
 
-```sh
-git clone https://github.com/apvarun/blist-hugo-theme.git themes/blist
-```
+   ```sh
+   npm install
+   ```
 
-Alternatively, you can include this repository as a [git submodule](https://git-scm.com/docs/gitsubmodules). This makes it easier to update this theme if you have your Hugo site in git as well:
+3. Run the web client with webpack for local development.
 
-```sh
-git submodule add https://github.com/apvarun/blist-hugo-theme.git themes/blist
-```
+   ```sh
+   npm start
+   ```
 
-## Preview the theme
+4. Build the client with sourcemaps available.
 
-Blist theme ships with an fully configured example site. For a quick preview:
-
-Copy the `package.json` file from `themes/showcase` folder to your hugo website root folder, and run `npm install`.
-
-```sh
-cd themes/blist/exampleSite/
-hugo serve --themesDir ../..
-```
-
-Then visit `http://localhost:1313/` in your browser to view the example site.
-
-When deploying to services like Netlify or Vercel, use the following command for building your site:
-
-```sh
-npm i && hugo -D --gc
-```
-
-## Add content
-
-The following explains how to add content to your Hugo site. You can find sample content in the `exampleSite/` folder.
-
-### Structure:
-
-    .
-    ├── ...
-    ├── blog       # Blog Section
-    │   ├── post1   # Post 1
-    │   ├── post2   # Post 2
-    │   └── _index
-    └── ...
-
-## Configure your site
-
-From `exampleSite/`, copy `config.toml` to the root folder of your Hugo site and change the fields as you like. Helpful comments are provided.
-
-### Menu
-
-Menu in Blist theme is pre-set to have all section names. You can include custom links in header using the `menu.main` option config.toml.
-
-### Darkmode
-
-`[params.darkModeToggle]` enables the dark mode toggle in header. The preference is then saved so that the mode is automatically chosen for return visits.
-
-### Customize Ascent Color
-
-Use `[params.ascentColor]` to change the default `pink` color to any supported color from the [list of default colors](https://tailwindcss.com/docs/customizing-colors) from Tailwind CSS.
-
-Some example values: bg-blue-200, bg-yellow-300
-
-### Search
-
-`[params.enableSearch]` option is used to enable search option in the theme.
-
-- Adds the search icon in header
-- Generates the search index
-- Uses fuse.js to enable searching through content
-
-In order to search, you can either click on the search icon from header or press `Ctrl/Cmd + /` key combination.
-
-**Note:**
-
-Make sure to enable JSON in outputs array.
-
-```
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-```
-
-### Latex
-
-Enable Mathematical options: set `math: true` in your markdown frontmatter
-
-### Google Analytics
-
-Set `googleAnalytics` in `config.toml` to activate Hugo's [internal Google Analytics template](https://gohugo.io/templates/internal/#google-analytics).
-
-## Performance
-
-[![Pagespeed Insights Performance](https://github.com/apvarun/blist-hugo-theme/raw/main/images/pagespeed-performance.png)](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fblist.vercel.app&tab=mobile)
-
-## Issues
-
-If you have a question, please [open an issue](https://github.com/apvarun/blist-hugo-theme/issues) for help and to help those who come after you. The more information you can provide, the better!
-
-## Contributing
-
-Contributions, issues, and feature requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
-<table><tr><td align="center"><a href="https://github.com/apvarun"><img alt="apvarun" src="https://avatars.githubusercontent.com/u/8411309?v=4" width="117" /><br />apvarun</a></td><td align="center"><a href="https://github.com/engel-b"><img alt="engel-b" src="https://avatars.githubusercontent.com/u/5812810?v=4" width="117" /><br />engel-b</a></td><td align="center"><a href="https://github.com/lucab85"><img alt="lucab85" src="https://avatars.githubusercontent.com/u/24267107?v=4" width="117" /><br />lucab85</a></td></tr></table>
-
-## License
-
-Licensed under [MIT](LICENSE)
-
-## 🤝 Support
-
-Give a ⭐️ if you like this project!
-
-<a href="https://www.buymeacoffee.com/apvarun" target="_blank" rel="noopener"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="40" width="145" alt="Buy Me A Coffee"></a>
+   ```sh
+   npm run build:development
+   ```
