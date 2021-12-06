@@ -1,7 +1,7 @@
 baseurl = "https://ilike.netlify.app"
 metaDataFormat = "yaml"
 Title = "👍 I-LIKE"
-theme = "blist"
+theme = "like"
 
 
 DefaultContentLanguage = "en"
