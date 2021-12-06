@@ -4,8 +4,8 @@ command = "cd exampleSite && hugo --themesDir ../.."
 
 [build.environment]
 HUGO_VERSION = "0.89.4"
-HUGO_THEME = "repo"
-HUGO_BASEURL = "https://ublogger.netlify.app"
+HUGO_ENV = "production"
+HUGO_BASEURL = "https://what-her-name.netlify.app"
 
 [[headers]]
 for = "/*"
